@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+       
+        .ball:hover{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(211, 50, 58, 0.959);
+            border-radius: 50%;
+            animation: bounce 1s ease-in-out infinite;
+            top: 300px;
+            position: relative;
+        }
+        .ball{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(211, 50, 58, 0.959);
+            border-radius: 50%;
+            
+            position: relative;
+        }
+        
+        @keyframes bounce {
+            0%, 25%,100% {
+                top: 0;
+                animation-timing-function: ease-in;
+            }
+            50% ,75%{
+                top: 300px; /* 300px (box height) - 50px (ball height) */
+                animation-timing-function: ease-out;
+            }
+        }
+
+    
+    </style>
+</head>
+<body>
+    <header>
+        <header>
+            <div class="sticky-sm-top">
+            <div class="p-3 bg-primary text-white fs-3">
+                <img src="Images/2024_ICC_Men's_T20_World_Cup_logo.svg.webp" alt="" width="60" height="60"pa>
+                <strong>ICC T20 World Cup</strong>
+                
+            </div>
+            <nav class="navbar navbar-expand-lg" style="background-color: rgb(224, 69, 115);"> <!-- Own Styling -->
+                <div class="container-fluid">
+                
+                  <a class="navbar-brand" href="#" style="color: beige;">Contents</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Teams</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="Posts.html">Posts</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Tickets
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">West Indies</a></li>
+                          <li><a class="dropdown-item" href="#">USA</a></li>
+                          
+                        </ul>
+                      </li>
+                     
+                    </ul>
+                
+            
+         <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+            </header>
+
+    </header>
+      
+    
+
+    <br><br><br>
+    <span class="container>"<p style="color: rgb(250, 8, 198);font-size: 40px; "><center>Teams</center></p></span>
+    <br><br>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <span class="border border-primary">
+        <div class="col">
+          <div class="card h-100">
+            <img src="Images/IND.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">INDIA</h5>
+              <p class="card-text"></p>
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Know More
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Explore</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            The India men's national cricket team represents India in men's international cricket. It is governed by the Board of Control for Cricket in India
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+          </div>
+        </div>
+    </span>
+        
+        
+        <div class="col">
+          <div class="card h-100">
+            <img src="Images/cricket-australia4901.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Australia</h5>
+              <p class="card-text"></p>
+              <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Know More
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Explore</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            The AUS men's national cricket team represents AUS in men's international cricket. It is governed by the Board of Control for Cricket in India
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col">
+          <div class="card h-100">
+            <img src="Images/ENG.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">England</h5>
+              <p class="card-text"></p>
+              <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Know More
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Explore</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            The England men's national cricket team represents England in men's international cricket. It is governed by the Board of Control for Cricket in India
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <div class="col">
+          <div class="card h-100">
+            <img src="Images/Cricket_West_Indies_Logo_2017.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">W.I</h5>
+              <p class="card-text"></p>
+              <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Know More
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Explore</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            The W.I men's national cricket team represents W.I in men's international cricket. It is governed by the Board of Control for Cricket in India
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <div class="col">
+            <div class="card h-100">
+              <img src="Images/United_States_Soccer_Federation_logo_2016.svg.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">U.S.A</h5>
+                <p class="card-text"></p>
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Know More
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Explore</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            The U.S.A men's national cricket team represents U.S.A in men's international cricket. It is governed by the Board of Control for Cricket in India
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary data-bs-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          <div class="col">
+            <div class="card h-100">
+              <img src="Images/1200px-Emblem_of_the_United_Arab_Emirates_(variant_3).svg.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">U.A.E</h5>
+                <p class="card-text"></p>
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Know More
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Explore</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            The U.A.E men's national cricket team represents U.A.E in men's international cricket. It is governed by the Board of Control for Cricket in India
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+<br><br><br>
+
+
+   <!-- footer section -->
+   <p><center></center></p>
+   <div class="Horiz" style=" padding: 40px; height: 40px;">
+       
+       <div class="ball"></div>
+
+   <footer class="bg-success
+   p-2 text-white bg-opacity-75 pt-5 pb-4">
+    <div class="container text-md-left">
+      <div class="row text-md-left">
+   
+       
+        <div class="col-3 ">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">About Us</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod.</p>
+        </div>
+   
+       
+        <div class="col-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Services</h5>
+          <p>
+            Tickets
+          </p>
+          <p>
+            Fan Meets
+          </p>
+          <p>
+             Hosting
+          </p>
+          <p>
+             Jersey
+          </p>
+        </div>
+   
+        
+        <div class="col-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+          <p>
+             123 Street, City, Country
+          </p>
+          <p>
+           info@example.com
+          </p>
+          <p>
+           + 123 456 7890
+          </p>
+          <p>
+            + 123 456 7890
+          </p>
+        </div>
+   
+        
+        <div class="col-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Follow us</h5>
+          <p>
+           Insta
+        </p>
+        <p>
+         FaceBook
+        </p>
+        <p>
+         Snap
+        </p>
+        <p>
+          others
+        </p>
+        </div>
+      </div>
+   
+      <hr class="mb-4">
+   
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p>©  <a href="#" style="text-decoration: none;">
+              <strong class="text-warning">
+                <i>Pratham M</i>
+              </strong>
+            </a>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+   </footer>
+ 
+ 
+
+
+
+    
+</body>
+</html>
