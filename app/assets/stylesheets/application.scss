@@ -14,3 +14,48 @@
  *= require_self
  */
  @import "bootstrap";
+
+ .navbar{
+    background-color: black !important;
+ }
+ .nav-link{
+    color: beige !important; 
+ }
+
+ #logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+
+  #home-container {
+    margin-top: 25px;
+  }
+
+  #card {
+    background-image: asset-url('t20worldcup2022-1665836173.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
+  }
+
+  html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: #b8b4b4;
+}
+
+
+
+  
+  #sticky-footer {
+    flex-shrink: none;
+  }

@@ -1,0 +1,43 @@
+
+
+<center>
+<div id = "page-content">
+  <div class="container">
+    <h1 class="text-center">players listing page</h1>
+
+    <% @players.each do |player| %>
+    <div class="row">
+        <div class="col8">
+          <div class="card shadow  mb-5 bg-body-tertiary rounded">
+          <div class="card-header">
+            
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to player.name, player_path(player), class: "text-success" %> </h5>
+            <p class="card-text"><%= player.position %></p>
+            <p class="card-text"><%= player.age %></p>
+            <p class="card-text"><%= player.is_active %></p>
+
+
+
+
+            <%= link_to "View", players_path(player), class: "btn btn-outline-success" %>
+            <%= link_to "Edit", edit_player_path(player), class: "btn btn-outline-info" %>
+            <%= link_to "Delete", players_path(player), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>  
+          </div>
+         
+      </div>
+    </div>
+  </div>
+
+
+<% end %>
+</div>
+</center>
+
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy; Your Website</small>
+  </div>
+</footer>
+
