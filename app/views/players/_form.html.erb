@@ -1,9 +1,22 @@
 <div class="container">
+<%= form_with(model: @player,class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+  <% if @player.errors.any? %>
+  <div class="alert alert-danger">
+    <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player
+      from
+      being saved:</h2>
+
+    <ul>
+      <% @player.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
   
 
   <div class="row justify-content-center">
     <div class="col-10">
-      <%= form_with(model: @player, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
        
         
         <div class="form-group row">
@@ -22,20 +35,52 @@
         </div>
 
         <div class="form-group row">
+          <%= f.label :position, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_field :position, class: "form-control shadow rounded", placeholder: "ID of team" %>
+        </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :team_id, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_field :team_id, class: "form-control shadow rounded", placeholder: "ID of team" %>
+        </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :roles, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_field :roles, class: "form-control shadow rounded", placeholder: "ID of team" %>
+        </div>
+        </div>
+
+
+
+        <div class="form-group row">
         <%= f.label :is_active, class: "col-2 col-form-label text-light" %>
         <div class="col-10"> 
 
-          <%= f.radio_button :is_active, 'false' %> 
-          <%= f.label :is_active, 'Yes', :true => 'true' %>
-          <%= f.radio_button :is_active, 'sms' %>
-          <%= f.label :is_active, 'No', :false => 'false' %>
+        <%= f.radio_button :is_active, true %>
+        <%= f.label :is_active_true, 'Yes', class: "text-light" %><br>
+        <%= f.radio_button :is_active, false %>
+        <%= f.label :is_active_false, 'No', class: "text-light" %>
         </div>
         </div>
 
         <div class="form-group row">
           <%= f.label :is_captain, class: "col-2 col-form-label text-light" %>
         <div class="col-10"> 
-          <%= f.check_box :is_captain,  rows: 10, class: "form-control shadow rounded", placeholder: "Tick if yes" %>
+          <%= f.check_box :is_captain,  rows: 10, class: "form-check-input shadow rounded" %>
+          <%= f.label :is_captain, 'Tick if yes', class: "form-check-label text-light" %>
+
+        </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :description, class: "col-2 col-form-label text-light" %>
+        <div class="col-10">
+          <%= f.text_area :description, class: "form-control shadow rounded", placeholder: "ID of team" %>
         </div>
         </div>
                 

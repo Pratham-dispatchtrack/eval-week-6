@@ -6,6 +6,7 @@ class Player < ApplicationRecord
   validates :age, numericality: { greater_than: 0 }
   validates :is_captain, presence: true
   validates :is_active, presence: true
+  validates :team_id, presence: true
 
 
   

@@ -2,9 +2,41 @@
 
 <%= render @player %>
 
-<div>
-  <%= link_to "Edit this player", edit_player_path(@player) %> |
-  <%= link_to "Back to players", players_path %>
 
-  <%= button_to "Destroy this player", @player, method: :delete %>
+
+
+
+<div id="page-content">
+  <h2 class="text-center mt-4"><%= @player.name %></h2>
+
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+            Info
+          </div>
+          <div class="card-body">
+          <p class="card-text"><%= @player.position %></p>
+          <p class="card-text"><%= @player.age %></p>
+          <p class="card-text"><%= @player.position %></p>
+          <p class="card-text"><%= @player.is_captain %></p>
+          <p class="card-text"><%= @player.roles %></p>
+          <p class="card-text"><%= @player.team_id %></p>
+          <p class="card-text"><%= @player.is_active %></p>
+            <%= link_to "Edit", edit_player_path(@player), class: "btn btn-outline-info" %>
+            <%= button_to "Delete", @player, class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
+          <div class="card-footer text-muted">
+          <small></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy;  Website</small>
+  </div>
+</footer>

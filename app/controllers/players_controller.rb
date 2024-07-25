@@ -2,8 +2,23 @@ class PlayersController < ApplicationController
   before_action :set_player, only: %i[ show edit update destroy ]
 
   # GET /players or /players.json
-  def index
-    @players = Player.all
+    def index
+      @players = Player.all
+      @teams = Team.all
+
+    if params[:team_id].present?
+      @players = @players.where(team_id: params[:team_id])
+    end
+
+    if params[:name].present?
+      @players = @players.where('name LIKE ?', "%#{params[:name]}%")
+    end
+
+    if params[:min_age].present? && params[:max_age].present?
+      @players = @players.where(age: params[:min_age]..params[:max_age])
+    end
+
+
   end
 
   # GET /players/1 or /players/1.json
@@ -65,6 +80,6 @@ class PlayersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit( :name, :age, :position, :is_active, :is_captain, roles)
+      params.require(:player).permit( :name, :age, :position, :is_active, :is_captain, :roles, :description, :team_id)
   end
 end

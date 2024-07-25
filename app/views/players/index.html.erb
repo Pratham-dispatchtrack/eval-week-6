@@ -2,6 +2,34 @@
 
 <center>
 <div id = "page-content">
+<div class="container">
+
+  <%= form_with url: players_path, method: :get, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :team_id, "Team Name" %>
+      <%= form.select :team_id, options_from_collection_for_select(@teams, :id, :name, params[:team_id]), { include_blank: 'All Teams' }, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :name, "Player Name" %>
+      <%= form.text_field :name, value: params[:name], class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :min_age, "Age Range" %>
+      <%= form.number_field :min_age, value: params[:min_age], class: 'form-control' %>
+      <%= form.number_field :max_age, value: params[:max_age], class: 'form-control' %>
+    </div>
+    <div>
+      <%= form.submit "Show Details", class: "btn btn-outline-primary" %>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
   <div class="container">
     <h1 class="text-center">players listing page</h1>
 
@@ -16,6 +44,10 @@
             <h5 class="card-title"><%= link_to player.name, player_path(player), class: "text-success" %> </h5>
             <p class="card-text"><%= player.position %></p>
             <p class="card-text"><%= player.age %></p>
+            <p class="card-text"><%= player.position %></p>
+            <p class="card-text"><%= player.is_captain %></p>
+            <p class="card-text"><%= player.roles %></p>
+            <p class="card-text"><%= player.team_id %></p>
             <p class="card-text"><%= player.is_active %></p>
 
 
@@ -23,8 +55,8 @@
 
             <%= link_to "View", players_path(player), class: "btn btn-outline-success" %>
             <%= link_to "Edit", edit_player_path(player), class: "btn btn-outline-info" %>
-            <%= link_to "Delete", players_path(player), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>  
-          </div>
+            <%= link_to 'Destroy', player_path(player),class:"btn btn-outline-danger",data: { turbo_method: :delete }%>
+            </div>
          
       </div>
     </div>
