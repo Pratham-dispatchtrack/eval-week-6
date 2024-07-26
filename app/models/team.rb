@@ -4,7 +4,7 @@ class Team < ApplicationRecord
     scope :founded_in, -> { where(founded: 1971 ) }
 
 
-    
+    accepts_nested_attributes_for :players, allow_destroy: true
 
     has_many :players
     validates :name, presence: true

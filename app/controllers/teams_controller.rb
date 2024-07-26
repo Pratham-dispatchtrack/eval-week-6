@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
     before_action :set_team, only: [:show, :update, :edit, :destroy]
-   
+#     before_action :authenticate_user!
+#   before_action :authorize_team, only: %i[ show edit update destroy ]
     def show
 
     end
@@ -51,8 +52,8 @@ class TeamsController < ApplicationController
     end
 
     def team_params
-        params.require(:team).permit(:id, :name, :country, :founded, :description)
-    end
+        params.require(:team).permit(:name, :country, :founded, :description, players_attributes: [:id, :name, :age, :position, :role, :is_captain, :is_active, :description, :_destroy])
+      end
 
 end
 

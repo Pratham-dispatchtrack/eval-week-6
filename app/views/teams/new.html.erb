@@ -1,11 +1,81 @@
-<div id="page-content">
-  <%= render 'form' %>
-  <h1 class="text-center mt-4">Create a new team</h1>
- 
-</div>
+<%= form_with(model: @team, local: true) do |form| %>
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
-<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
-  <div class="container text-center">
-    <small>Copyright &copy; Your Website</small>
+      <ul>
+        <% @team.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
   </div>
-</footer>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :founded %>
+    <%= form.number_field :founded %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <h3>Players</h3>
+  <%= form.fields_for :players do |player_form| %>
+    <div class="nested-fields">
+      <div class="field">
+        <%= player_form.label :name %>
+        <%= player_form.text_field :name %>
+      </div>
+      
+      <div class="field">
+        <%= player_form.label :age %>
+        <%= player_form.number_field :age %>
+      </div>
+      
+      <div class="field">
+        <%= player_form.label :position %>
+        <%= player_form.text_field :position %>
+      </div>
+      
+      <div class="field">
+        <%= player_form.label :role %>
+        <%= player_form.text_field :role %>
+      </div>
+      
+      <div class="field">
+        <%= player_form.label :is_captain %>
+        <%= player_form.check_box :is_captain %>
+      </div>
+      
+      <div class="field">
+        <%= player_form.label :is_active %>
+        <%= player_form.check_box :is_active %>
+      </div>
+      
+      <div class="field">
+        <%= player_form.label :description %>
+        <%= player_form.text_area :description %>
+      </div>
+
+      <%= link_to 'Remove Player', '#', class: 'remove_fields' %>
+    </div>
+  <% end %>
+
+  <%= link_to_add_fields 'Add Player', form, :players %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
