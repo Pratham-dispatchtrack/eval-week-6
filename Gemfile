@@ -10,6 +10,11 @@ gem "sprockets-rails"
 
 # Use mysql as the database for Active Record
 gem "mysql2", "~> 0.5"
+gem 'pry'
+gem 'will_paginate', '~> 4.0'
+gem 'friendly_id', '~> 5.5.0'
+# gem 'devise'
+gem 'pundit'
 
 gem "jquery-rails"
 gem "bootstrap"
@@ -71,3 +76,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "devise", "~> 4.9"

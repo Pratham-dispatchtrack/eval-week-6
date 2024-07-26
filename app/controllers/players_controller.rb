@@ -1,11 +1,12 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: %i[ show edit update destroy ]
+  # before_action :authenticate_user!, only: %i[ show ]
 
   # GET /players or /players.json
     def index
       @players = Player.all
       @teams = Team.all
-
+      @active_players = Player.particular_roles
     if params[:team_id].present?
       @players = @players.where(team_id: params[:team_id])
     end
@@ -17,6 +18,8 @@ class PlayersController < ApplicationController
     if params[:min_age].present? && params[:max_age].present?
       @players = @players.where(age: params[:min_age]..params[:max_age])
     end
+
+    @players = @players.paginate(page: params[:page], per_page: 5)
 
 
   end

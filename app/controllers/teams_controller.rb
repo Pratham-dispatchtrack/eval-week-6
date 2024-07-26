@@ -2,10 +2,11 @@ class TeamsController < ApplicationController
     before_action :set_team, only: [:show, :update, :edit, :destroy]
    
     def show
+
     end
     
     def index
-        @all_teams = Team.all
+        @all_teams = Team.paginate(page: params[:page], per_page: 4)
     end
 
     def new
@@ -13,6 +14,7 @@ class TeamsController < ApplicationController
     end
 
     def edit
+
     end
 
     def create
@@ -28,6 +30,7 @@ class TeamsController < ApplicationController
    
 
     def update
+
         if @team.update(team_params)
             flash[:notice] = "team was updated successfully"
             redirect_to @team

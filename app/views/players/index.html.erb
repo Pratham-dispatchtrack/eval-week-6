@@ -4,6 +4,11 @@
 <div id = "page-content">
 <div class="container">
 
+
+
+
+<%= will_paginate @players %>
+
   <%= form_with url: players_path, method: :get, local: true do |form| %>
     <div class="mb-3">
       <%= form.label :team_id, "Team Name" %>
